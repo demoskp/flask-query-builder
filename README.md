@@ -1,7 +1,7 @@
 # Build SQLAlchemy queries from API requests
 
-![Test Status](https://img.shields.io/github/workflow/status/demoskp/flask-query-builder/release?label=tests)
-![Build Status](https://img.shields.io/github/workflow/status/demoskp/flask-query-builder/release?label=release)
+![Test Status](https://img.shields.io/github/workflow/status/demoskp/flask-query-builder/Release?label=tests)
+![Build Status](https://img.shields.io/github/workflow/status/demoskp/flask-query-builder/Release?label=release)
 [![PyPI Version](http://img.shields.io/pypi/v/flask-query-builder.svg)](https://pypi.python.org/pypi/flask-query-builder)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/flask-query-builder)
 
