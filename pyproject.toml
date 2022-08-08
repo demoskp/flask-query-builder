@@ -1,15 +1,27 @@
 [tool.poetry]
 name = "flask-query-builder"
 version = "0.1.0"
-description = ""
-authors = ["Demos"]
+description = "A request query builder for flask and sqlalchemy"
+authors = ["Demos Petsas"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=2.7,<2.8 || >=3.6.0, <3.10.0"
+SQLAlchemy = "1.4.0"
+Flask = "*"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
+pytest = ">=3.5"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.0.8"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+version_variable = [
+    "flask_query_builder/__init__.py:__version__",
+    "pyproject.toml:version"
+]
+branch = "master"
+upload_to_pypi = true
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
