@@ -1,13 +1,11 @@
 # Build SQLAlchemy queries from API requests
 
-![Test Status](https://img.shields.io/github/workflow/status/demoskp/flask-query-builder/Release?label=tests)
-![Build Status](https://img.shields.io/github/workflow/status/demoskp/flask-query-builder/Release?label=release)
+![Test Status](https://img.shields.io/github/actions/workflow/status/demoskp/flask-query-builder/release.yml?branch=master&label=tests)
+![Build Status](https://img.shields.io/github/actions/workflow/status/demoskp/flask-query-builder/release.yml?branch=master&label=build)
 [![PyPI Version](http://img.shields.io/pypi/v/flask-query-builder.svg)](https://pypi.python.org/pypi/flask-query-builder)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/flask-query-builder)
 
 This package allows you to filter and sort based on a request. Query parameter names follow the [JSON API specification](http://jsonapi.org/) as closely as possible.
-
-<TOCInline toc={props.toc} fromHeading={2} asDisclosure={true}/>
 
 ## Basic usage
 
