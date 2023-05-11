@@ -6,7 +6,7 @@ authors = ["Demos Petsas"]
 
 [tool.poetry.dependencies]
 python = ">=2.7,<2.8 || >=3.6.0, <3.10.0"
-SQLAlchemy = "1.4.0"
+SQLAlchemy = ">=1.4.0"
 Flask = "*"
 
 [tool.poetry.dev-dependencies]
