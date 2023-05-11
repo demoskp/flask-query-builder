@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.2 (2023-05-11)
+### Fix
+* Support more python versions ([`bef2dc1`](https://github.com/demoskp/flask-query-builder/commit/bef2dc1fd7b669e66bd6aede8a9a875f9b6767d4))
+
 ## v0.2.1 (2023-05-11)
 ### Fix
 * Support more sqlalchemy versions ([`191a82b`](https://github.com/demoskp/flask-query-builder/commit/191a82bd003cafbc72ec1a6682a6927b08e4bad5))
