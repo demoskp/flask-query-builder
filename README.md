@@ -7,6 +7,30 @@
 
 This package allows you to filter and sort based on a request. Query parameter names follow the [JSON API specification](http://jsonapi.org/) as closely as possible.
 
+## Prerequisites
+If you are using flask-sqlalchemy you don't need to perform any setup steps. 
+
+If however you are using vanilla sqlalchemy you need to assign your query object to your base model like so:
+
+```python
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
+
+engine = create_engine("sqlite:///db")
+
+session = scoped_session(
+    sessionmaker(
+        autoflush=False,
+        autocommit=False,
+        bind=engine
+    )
+)
+
+Model = declarative_base()
+Model.query = session.query_property()
+```
+
+
 ## Basic usage
 
 ### Filter a query based on a request
@@ -47,7 +71,7 @@ users = (
 query = User.query.filter_by(name="John")
 
 query = (
-    QueryBuilder(model=User, query=query) // start from an existing query
+    QueryBuilder(model=User, query=query) # start from an existing query
         .allowed_filters(["first_name", "last_name"])
         .query
 )
