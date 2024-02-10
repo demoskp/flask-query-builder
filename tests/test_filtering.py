@@ -7,6 +7,24 @@ from flask_query_builder.exceptions import InvalidFilterException
 from flask_query_builder.filters import Filter
 from flask_query_builder.querying import QueryBuilder, AllowedFilter
 
+def test_assert_no_exception_raised_when_sort_not_allowed_and_raise_exceptions_is_disabled(db_session, request_context, models):
+    birth_date = datetime.strptime("1970-01-01", "%Y-%m-%d")
+    user1 = models.User(first_name='Frank', last_name='Elliot', username='frank', birth_date=birth_date)
+    user2 = models.User(first_name='Charlie', last_name='Joe', username='charlie', birth_date=birth_date)
+    user3 = models.User(first_name='Ann', last_name='Smith', username='ann', birth_date=birth_date)
+
+    db_session.add_all([user1, user2, user3])
+    db_session.commit()
+
+    with request_context("/?filter[first_name]=john"):
+        users = QueryBuilder(models.User, raise_exceptions=False).allowed_filters([
+            AllowedFilter.exact("random_field"),
+        ]) \
+            .query \
+            .all()
+
+        assert len(users) == 3
+
 
 def test_assert_exception_raised_when_sort_not_allowed(db_session, request_context, models):
     birth_date = datetime.strptime("1970-01-01", "%Y-%m-%d")

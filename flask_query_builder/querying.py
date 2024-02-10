@@ -66,9 +66,10 @@ class AllowedSort:
 class QueryBuilder:
     """The base class for starting your query"""
 
-    def __init__(self, model: BaseModel, query=None):
+    def __init__(self, model: BaseModel, query=None, raise_exceptions=True):
         self.model = model
         self._query = query or model.query
+        self._raise_exceptions = raise_exceptions
 
     def allowed_filters(self, filters):
         """Provide a list of filters that can be applied on the request"""
@@ -76,7 +77,10 @@ class QueryBuilder:
         allowed_filter_map = self._get_filter_map(filters)
         for applied_filter in applied_filters:
             if applied_filter not in allowed_filter_map:
-                raise InvalidFilterException(f"Applied filter '{applied_filter}' not allowed")
+                if self._raise_exceptions:
+                    raise InvalidFilterException(f"Applied filter '{applied_filter}' not allowed")
+                else:
+                    continue
             self._apply_filter(allowed_filter_map.get(applied_filter))
         return self
 
@@ -86,7 +90,10 @@ class QueryBuilder:
         allowed_sort_map = self._get_sort_map(sorts)
         for applied_sort in applied_sorts:
             if applied_sort.name not in allowed_sort_map:
-                raise InvalidSortException(f"Applied sort '{applied_sort.name}' not allowed")
+                if self._raise_exceptions:
+                    raise InvalidSortException(f"Applied sort '{applied_sort.name}' not allowed")
+                else:
+                    continue
             self._apply_sort(allowed_sort_map.get(applied_sort.name), applied_sort.descending)
         return self
 
