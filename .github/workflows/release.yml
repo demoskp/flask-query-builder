@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: release
     environment:
-      name: pypi
+      name: release
       url: https://pypi.org/project/flask-query-builder
     permissions:
       id-token: write
