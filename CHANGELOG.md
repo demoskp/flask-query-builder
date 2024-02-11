@@ -2,6 +2,13 @@
 
 
 
+## v0.3.2 (2024-02-11)
+
+### Fix
+
+* fix: update ci workflow to support publishing to PyPi ([`1df6799`](https://github.com/demoskp/flask-query-builder/commit/1df67996971e37daf8cdabc5d5e76b4a06bb4927))
+
+
 ## v0.3.1 (2024-02-11)
 
 ### Fix
