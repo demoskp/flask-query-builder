@@ -2,6 +2,7 @@
 name = "flask-query-builder"
 version = "0.3.0"
 description = "A request query builder for flask and sqlalchemy"
+readme = "README.md"
 authors = ["Demos Petsas"]
 
 [tool.poetry.dependencies]
