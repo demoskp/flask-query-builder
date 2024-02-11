@@ -2,6 +2,13 @@
 
 
 
+## v0.3.3 (2024-02-11)
+
+### Fix
+
+* fix: add README path to pyproject.toml ([`1a37496`](https://github.com/demoskp/flask-query-builder/commit/1a37496e9a6a5e93c6af83534449b74397b1f3b9))
+
+
 ## v0.3.2 (2024-02-11)
 
 ### Fix
