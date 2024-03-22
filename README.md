@@ -88,7 +88,7 @@ You can add multiple filters to the request `?filter[name]=John,Mary&filter[age]
 ### Exact Filter
 You can use an exact filter to perform an exact match on any fields that exist on the model by using `AllowedFilter.exact()`, for example:
 
-Request query: `/users?filter=[first_name]=John`
+Request query: `/users?filter[first_name]=John`
 
 ```python
 users = (
@@ -114,7 +114,7 @@ users = (
 
 With the `exact` filter you can use a different filter name on the request to what is named on your model for example:
 
-Request query: `/users?filter=[name]=John`
+Request query: `/users?filter[name]=John`
 ```python
 users = (
     QueryBuilder(User)
@@ -131,7 +131,7 @@ The first parameter is always the name used on the request and the second one is
 ### Partial Filter
 You can use a partial filter to perform a case-insensitive wildcard search on any fields that exist on the model by using `AllowedFilter.partial()`, for example:
 
-Request query: `/users?filter=[first_name]=John`
+Request query: `/users?filter[first_name]=John`
 ```python
 users = (
     QueryBuilder(User)
@@ -144,7 +144,7 @@ users = (
 ```
 With the `partial` filter you can use a different filter name on the request to what is named on your model for example:
 
-Request query: `/users?filter=[name]=John`
+Request query: `/users?filter[name]=John`
 ```python
 users = (
     QueryBuilder(User)
