@@ -198,3 +198,30 @@ def test_custom_filter_is_applied(db_session, request_context, models):
             .all()
 
         assert len(users) == 2
+
+
+def test_case_sensitive_filter_found(db_session, request_context, models):
+    birth_date = datetime.strptime("1970-01-01", "%Y-%m-%d")
+    user1 = models.User(first_name='Frank', last_name='Elliot', username='frank', birth_date=birth_date)
+    user2 = models.User(first_name='Charlie', last_name='Joe', username='charlie', birth_date=birth_date)
+    user3 = models.User(first_name='Ann', last_name='Smith', username='ann', birth_date=birth_date)
+
+    db_session.add_all([user1, user2, user3])
+    db_session.commit()
+
+
+    class FirstNameFilter(Filter):
+        def filter(self, query, model, filter_name, values):
+            if not len(values):
+                return query
+            return query.filter(models.User.first_name.in_(values))
+
+    with request_context("/?filter[FirstName]=Ann,Charlie"):
+        users = QueryBuilder(models.User) \
+            .allowed_filters([
+            AllowedFilter.custom("FirstName", FirstNameFilter())
+        ]) \
+            .query \
+            .all()
+
+        assert len(users) == 2

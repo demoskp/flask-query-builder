@@ -7,3 +7,7 @@ poetry.lock
 
 # ignore Intellij folders
 .idea/
+
+# ignore testing cache
+.tox/
+.python-version

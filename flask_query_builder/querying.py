@@ -139,7 +139,7 @@ class QueryBuilder:
         """Get the list of filters applied on the request"""
         applied_filters = []
         for arg in request.args:
-            matches = re.findall(r"(?<=filter\[).[a-z._-]+", arg)
+            matches = re.findall(r"(?<=filter\[).[a-zA-Z._-]+", arg)
             if len(matches) == 1:
                 applied_filters.append(matches[0])
         return applied_filters
