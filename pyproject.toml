@@ -18,10 +18,12 @@ requires = ["poetry-core>=1.0.8"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.semantic_release]
-version_variable = [
+version_variables = [
     "flask_query_builder/__init__.py:__version__",
     "pyproject.toml:version"
 ]
+version_toml = ["pyproject.toml:tool.poetry.version"]
+
 branch = "master"
 upload_to_pypi = true
 upload_to_release = true
