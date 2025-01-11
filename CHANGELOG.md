@@ -2,6 +2,13 @@
 
 
 
+## v0.3.5 (2025-01-11)
+
+### Fix
+
+* fix: add ability to add case-sensitive fiter names ([`1673b65`](https://github.com/demoskp/flask-query-builder/commit/1673b656db34283f81bbbaa4017bc3cedf8e4622))
+
+
 ## v0.3.4 (2025-01-11)
 
 ### Chore

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "flask-query-builder"
-version = "0.3.0"
+version = "0.3.5"
 description = "A request query builder for flask and sqlalchemy"
 readme = "README.md"
 authors = ["Demos Petsas"]
