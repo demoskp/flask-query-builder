@@ -2,6 +2,17 @@
 
 
 
+## v0.3.4 (2025-01-11)
+
+### Chore
+
+* chore: update README ([`7b769d2`](https://github.com/demoskp/flask-query-builder/commit/7b769d223d5c851b88931a275c9576dc93563cc1))
+
+### Fix
+
+* fix: add ability to add case-sensitive fiter names ([`4f76f90`](https://github.com/demoskp/flask-query-builder/commit/4f76f9030b87b289b476418f3104783e785120a1))
+
+
 ## v0.3.3 (2024-02-11)
 
 ### Fix
